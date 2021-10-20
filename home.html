@@ -25,6 +25,26 @@
         <input type="text" id="search"/>
         <button id="btn1">Search</button>
     </div>
-    <script></script>
+    <div id="display"></div>
+    <script>
+        fetch(` https://api.github.com/users/octocat`)
+        .then(function(res){
+            return res.json()
+        })
+        .then(function(res){
+            console.log(res)
+        })
+        .catch(function(eror){
+
+        })
+        function display(data){
+            var dis = document.getElementById("dis");
+            var div = document.createElement("div");
+            var name = document.createElement("p");
+            name.textContent = data.name;
+            div.appendChild(name);
+            dis.appendChild(div);
+        }
+    </script>
 </body>
 </html>
