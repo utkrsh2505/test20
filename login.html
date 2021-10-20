@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background-image: url('https://img.freepik.com/free-photo/empty-wood-table-top-abstract-blurred-restaurant-cafe-background-can-be-used-display-montage-your-products_7191-916.jpg?size=626&ext=jpg');
+        }
+        #frm{
+        
+            width: 600px;
+            margin: auto;
+            padding: 10px;
+            margin-top: 150px;
+            background-color: rgba(255, 255, 255, 0.884);
+
+        }
+        .main{
+            text-align: center;
+            margin: 30px;
+            
+        }
+        #btn {
+            width: 150px;
+            font-size: 30px;
+            margin-left: 220px;
+            color: wheat;
+            background-color: black;
+            border: 1px solid black;
+        }
+        #name{
+            font-size: 30px;
+        }
+        #password{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form id="frm">
+        <div class="main"><input type="text" placeholder="username" id="name"/></div>
+        <div class="main"><input type="text" placeholder="password" id="password"/></div>
+        <button class="main" id="btn">Login</button>
+    </form>
+    <script>
+        function fetchLoad(){
+       return fetch(`https://reqres.in/api/users`)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(response){
+            console.log(response)
+        })
+        .catch(function(error){
+
+        })
+    }
+    function login(){
+        
+    }
+        window.addEventListener("load",function(){
+            fetchLoad();
+
+        })
+    </script>
+</body>
+</html>
